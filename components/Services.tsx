@@ -8,19 +8,19 @@ const services = [
     icon: KeyRound,
     title: "Sewa Mobil Lepas Kunci",
     description: "Fleksibilitas penuh dan privasi maksimal. Kemudikan sendiri kendaraan pilihan Anda dan eksplorasi destinasi tanpa batas waktu. Semua unit dipastikan dalam kondisi prima dan terawat dengan jadwal servis rutin.",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
+    image: "/assets/layanan/1.png"
   },
   {
     icon: Briefcase,
     title: "Sewa Mobil dengan Driver",
     description: "Ideal untuk perjalanan bisnis atau wisata tanpa repot memikirkan navigasi. Driver profesional, ramah, paham rute wisata terbaik, dan berpengalaman kami siap mengantarkan Anda ke tujuan dengan aman dan nyaman.",
-    image: "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?w=800&q=80"
+    image: "/assets/layanan/2.png"
   },
   {
     icon: Bike,
     title: "Sewa Motor Wisata",
     description: "Solusi gesit, praktis, dan hemat untuk menjelajahi sudut-sudut tersembunyi kota Magelang dan Yogyakarta. Sangat cocok untuk solo traveler atau pasangan yang ingin menghindari kemacetan.",
-    image: "https://unsplash.com/photos/man-in-black-jacket-riding-motorcycle-on-road-during-daytime-TI7LeUKoewI"
+    image: "/assets/layanan/3.png"
   },
 ];
 

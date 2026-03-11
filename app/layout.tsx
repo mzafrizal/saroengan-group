@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "PT. Hexa Creative Bersama | Transportasi & Wisata Terpercaya",
+  title: "Hexa Creative | Transportasi & Wisata Terpercaya",
   description:
     "Solusi transportasi dan wisata terpercaya di Magelang dan Yogyakarta. Sewa mobil, motor, elf, antar jemput bandara, dan paket wisata eksklusif.",
   keywords: [

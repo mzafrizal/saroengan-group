@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Tentang Kami", href: "#about" },
   { name: "Layanan", href: "#services" },
   { name: "Armada", href: "#private-vehicles" },
-  { name: "Paket Wisata", href: "#tour-packages" },
+  { name: "Paket Wisata", href: "#packages" },
 ];
 
 export default function Navbar() {
