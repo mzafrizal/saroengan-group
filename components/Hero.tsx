@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, ChevronRight, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -83,9 +84,12 @@ export default function Hero() {
           {/* subtle glow behind the cars */}
           <div className="absolute top-1/2 lg:bottom-10 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-0 w-[80%] h-32 lg:h-48 bg-blue-500/20 blur-[80px] rounded-full" />
           
-          <img
+          <Image
             src="/assets/rental3.png"
             alt="Armada Hexa Creative"
+            width={800}
+            height={600}
+            priority
             className="relative w-full max-w-xl lg:max-w-none object-contain drop-shadow-2xl max-h-[40vh] sm:max-h-[50vh] lg:max-h-[75vh] 2xl:scale-110 lg:origin-bottom-right"
           />
         </div>

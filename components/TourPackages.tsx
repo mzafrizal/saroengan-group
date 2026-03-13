@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 
 const packages = [
   {
@@ -84,10 +85,12 @@ export default function TourPackages() {
                 <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden group h-full">
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <Image
                       src={pkg.image}
                       alt={pkg.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
                     {/* Highlight badge */}

@@ -1,5 +1,6 @@
 import { ArrowRight, Tag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 const vehicles = [
   {
@@ -36,7 +37,7 @@ const vehicles = [
     image: "/assets/armada/5-avanza-fc.png",
   },
   {
-    name: "Sigra/Calya AT/MT",
+    name: "Sigra,Calya AT/MT",
 
     price: "Rp 350.000",
     duration: "24 Jam",
@@ -67,21 +68,21 @@ const vehicles = [
     name: "Innova Reborn AT/MT",
 
     price: "Rp 600.000",
-    duration: "One Day",
+    duration: "Day",
     image: "/assets/armada/10-innova-reborn.png",
   },
   {
     name: "Innova Zenix AT",
 
     price: "Rp 750.000",
-    duration: "One Day",
+    duration: "Day",
     image: "/assets/armada/11-innova-zenix.png",
   },
   {
     name: "Pajero Sport / Fortuner",
 
     price: "Rp 1.100.000",
-    duration: "One Day",
+    duration: "Day",
     image: "/assets/armada/12-pajero.png",
   },
 ];
@@ -114,10 +115,12 @@ export default function PrivateVehicles() {
             >
               {/* Image area */}
               <div className="relative h-44 overflow-hidden">
-                <img
+                <Image
                   src={vehicle.image}
                   alt={vehicle.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Gradient overlay to make text readable */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />

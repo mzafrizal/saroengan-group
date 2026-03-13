@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Beranda", href: "#home" },
@@ -39,9 +40,11 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2 z-50">
-            <img
+            <Image
               src="/assets/logo-putih.png"
               alt="Hexa Logo"
+              width={120}
+              height={40}
               className="h-8 md:h-10 w-auto object-contain"
             />
             <span className="text-white font-bold text-lg md:text-xl tracking-tight hidden sm:block">

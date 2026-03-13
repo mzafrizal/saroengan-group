@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { KeyRound, Briefcase, Bike, Plus, Minus } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -107,11 +108,13 @@ export default function Services() {
           {/* Right: Dynamic Image Display (Desktop Only) */}
           <div className="hidden lg:block relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group border border-slate-200/50">
             {services.map((service, index) => (
-              <img
+              <Image
                 key={service.title}
                 src={service.image}
                 alt={service.title}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                fill
+                sizes="50vw"
+                className={`object-cover transition-all duration-700 ease-in-out ${
                   openIndex === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105"
                 }`}
               />

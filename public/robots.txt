@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hexacreative.com
+
+# Sitemaps
+Sitemap: https://hexacreative.com/sitemap.xml

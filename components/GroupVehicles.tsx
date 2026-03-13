@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Bus,
   PlaneLanding,
@@ -88,10 +89,12 @@ export default function GroupVehicles() {
           <div className="relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
             {/* Top banner image */}
             <div className="relative h-52 overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80"
                 alt="Sewa Elf dan Hiace"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">
@@ -150,10 +153,12 @@ export default function GroupVehicles() {
           <div className="relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
             {/* Top banner image */}
             <div className="relative h-52 overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
                 alt="Layanan Antar Jemput Bandara"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
               <div className="absolute bottom-4 left-5 flex items-center gap-3">

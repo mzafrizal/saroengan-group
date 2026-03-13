@@ -6,6 +6,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const contactItems = [
   {
@@ -122,9 +123,11 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Name */}
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src="/assets/logo-putih.png"
               alt="Hexa Logo"
+              width={120}
+              height={40}
               className="h-8 w-auto object-contain brightness-90"
             />
             <div>
