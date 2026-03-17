@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import PrivateVehicles from "@/components/PrivateVehicles";
 import GroupVehicles from "@/components/GroupVehicles";
 import TourPackages from "@/components/TourPackages";
+import LocationAndReviews from "@/components/LocationAndReviews"; // <-- IMPORT BARU
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -29,6 +30,13 @@ export default function Home() {
       <ScrollReveal>
         <TourPackages />
       </ScrollReveal>
+      
+      {/* --- TAMBAHKAN BAGIAN INI --- */}
+      <ScrollReveal>
+        <LocationAndReviews />
+      </ScrollReveal>
+      {/* ---------------------------- */}
+
       <Footer />
       <FloatingWhatsApp />
     </main>

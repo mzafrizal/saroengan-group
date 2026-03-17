@@ -30,14 +30,7 @@ const contactItems = [
     href: "mailto:hexacreatiive@gmail.com",
     color: "bg-blue-500/10 text-blue-400 border-blue-500/20",
   },
-  {
-    icon: MapPin,
-    label: "Kantor",
-    value:
-      "RT.003/RW.002, Giyanti, Kec. Candimulyo, Kabupaten Magelang, Jawa Tengah 56191",
-    href: "https://maps.google.com/?q=Giyanti+Candimulyo+Magelang",
-    color: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-  },
+  
 ];
 
 export default function Footer() {
@@ -64,7 +57,7 @@ export default function Footer() {
         </div>
 
         {/* Contact Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {contactItems.map((item) => {
             const Icon = item.icon;
             return (
