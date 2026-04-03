@@ -9,31 +9,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Hexa Creative | Transportasi & Wisata Terpercaya",
+  title: "UMKM Bima Wibisono | Grosir Kentang Segar Sukomakmur",
   description:
-    "Solusi transportasi dan wisata terpercaya di Magelang dan Yogyakarta. Sewa mobil, motor, elf, antar jemput bandara, dan paket wisata eksklusif.",
+    "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing, Dusun Marongan, Sukomakmur, Magelang.",
   keywords: [
-    "sewa mobil Magelang",
-    "sewa mobil Yogyakarta",
-    "wisata Borobudur",
-    "antar jemput bandara YIA",
-    "Hexa Creative Bersama",
-    "sewa motor Magelang",
-    "sewa elf Yogyakarta",
-    "paket wisata Magelang",
+    "grosir kentang",
+    "kentang sukomakmur",
+    "agen kentang",
+    "kentang dieng",
+    "kentang sumbing",
+    "Bima Wibisono",
+    "petani kentang",
+    "jual kentang magelang",
   ],
   openGraph: {
-    title: "Hexa Creative | Transportasi & Wisata Terpercaya",
-    description: "Solusi transportasi dan wisata terpercaya di Magelang dan Yogyakarta. Sewa mobil, motor, elf, antar jemput bandara, dan paket wisata eksklusif.",
-    url: "https://hexacreative.com",
-    siteName: "Hexa Creative",
+    title: "UMKM Bima Wibisono | Grosir Kentang Segar Sukomakmur",
+    description: "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing, Magelang.",
+    url: "https://bimawibisonokentang.vercel.app",
+    siteName: "UMKM Bima Wibisono",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hexa Creative | Transportasi & Wisata Terpercaya",
-    description: "Solusi transportasi dan wisata terpercaya di Magelang dan Yogyakarta. Sewa mobil, motor, elf, antar jemput bandara, dan paket wisata eksklusif.",
+    title: "UMKM Bima Wibisono | Grosir Kentang",
+    description: "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing.",
   },
 };
 

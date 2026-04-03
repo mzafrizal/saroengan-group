@@ -1,8 +1,8 @@
 import {
-  ShieldCheck,
-  Car,
-  UserCheck,
-  CircleDollarSign,
+  Sprout,
+  Sun,
+  Droplets,
+  HeartHandshake,
 } from "lucide-react";
 import {
   Card,
@@ -10,72 +10,71 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 
-const features = [
+const steps = [
   {
-    icon: ShieldCheck,
-    title: "Legalitas Resmi",
+    icon: Sprout,
+    title: "Pemilihan Bibit",
     description:
-      "Perusahaan dengan NIB terdaftar, beroperasi secara legal dan terpercaya sejak 2024.",
-    color: "from-blue-500 to-blue-600",
-    bg: "bg-blue-50",
-    iconColor: "text-blue-600",
+      "Bibit kentang unggul yang disiapkan dari hasil panen terbaik, ditanam dengan penuh kehati-hatian.",
+    color: "from-amber-500 to-amber-600",
+    bg: "bg-amber-50",
+    iconColor: "text-amber-600",
   },
   {
-    icon: Car,
-    title: "Armada Prima",
+    icon: Sun,
+    title: "Sinar Matahari & Suhu Ideal",
     description:
-      "Armada terawat, modern, dan selalu dalam kondisi prima untuk kenyamanan perjalanan Anda.",
-    color: "from-indigo-500 to-indigo-600",
-    bg: "bg-indigo-50",
-    iconColor: "text-indigo-600",
+      "Ketinggian 1.475 MDPL memberikan suhu dingin berkabut yang menjadi habitat paling sempurna untuk kentang.",
+    color: "from-orange-500 to-orange-600",
+    bg: "bg-orange-50",
+    iconColor: "text-orange-600",
   },
   {
-    icon: UserCheck,
-    title: "Driver Profesional",
+    icon: Droplets,
+    title: "Perawatan Alami",
     description:
-      "Pengemudi berpengalaman, ramah, dan terlatih untuk memberikan pelayanan terbaik.",
-    color: "from-cyan-500 to-cyan-600",
-    bg: "bg-cyan-50",
-    iconColor: "text-cyan-600",
+      "Pengairan dari mata air pegunungan dan perawatan rutin oleh para petani lokal yang sangat berpengalaman.",
+    color: "from-stone-500 to-stone-600",
+    bg: "bg-stone-50",
+    iconColor: "text-stone-600",
   },
   {
-    icon: CircleDollarSign,
-    title: "Harga Kompetitif",
+    icon: HeartHandshake,
+    title: "Panen Penuh Cinta",
     description:
-      "Harga transparan tanpa biaya tersembunyi. Layanan 24/7 siap membantu kapan pun Anda butuhkan.",
-    color: "from-sky-500 to-sky-600",
-    bg: "bg-sky-50",
-    iconColor: "text-sky-600",
+      "Hasil panen yang dipetik dengan tangan penuh ketekunan, membawa berkah alam Sumbing langsung ke meja Anda.",
+    color: "from-green-500 to-green-600",
+    bg: "bg-green-50",
+    iconColor: "text-green-600",
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 bg-white">
+    <section id="about" className="py-24 px-6 bg-stone-100">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-blue-600 font-semibold text-sm tracking-widest uppercase mb-3">
-            Keunggulan Kami
+          <span className="inline-block text-amber-600 font-semibold text-sm tracking-widest uppercase mb-3">
+            Tentang Kami
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-            Mengapa Memilih Kami?
+          <h2 className="text-3xl md:text-4xl font-extrabold text-stone-900 mb-4">
+            Cerita Petani Marongan
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mx-auto mb-6" />
-          <p className="max-w-4xl mx-auto text-slate-500 text-lg">
-            Kami hadir dengan komitmen penuh untuk memberikan pengalaman
-            perjalanan yang tak terlupakan.
+          <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full mx-auto mb-6" />
+          <p className="max-w-4xl mx-auto text-stone-600 text-lg leading-relaxed">
+            Dedikasi tanpa batas dari para petani Desa Sukomakmur dalam merawat komoditas kentang. Dari proses pembibitan hingga panen, semua diolah oleh tangan-tangan ahli yang mewarisi kearifan lokal sejak turun-temurun.
           </p>
         </div>
 
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => {
+          {steps.map((feature) => {
             const Icon = feature.icon;
             return (
               <Card
                 key={feature.title}
-                className="group border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden"
+                className="group border border-stone-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-2xl overflow-hidden bg-white"
               >
                 <CardHeader className="pb-0 pt-8 px-6">
                   <div
@@ -83,12 +82,12 @@ export default function About() {
                   >
                     <Icon className={`w-7 h-7 ${feature.iconColor}`} />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-800">
+                  <h3 className="text-lg font-bold text-stone-800">
                     {feature.title}
                   </h3>
                 </CardHeader>
                 <CardContent className="px-6 pb-8 pt-3">
-                  <p className="text-slate-500 text-sm leading-relaxed">
+                  <p className="text-stone-500 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>

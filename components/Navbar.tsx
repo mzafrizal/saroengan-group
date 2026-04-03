@@ -2,16 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 const navLinks = [
   { name: "Beranda", href: "#home" },
-  { name: "Tentang Kami", href: "#about" },
-  { name: "Layanan", href: "#services" },
-  { name: "Armada", href: "#private-vehicles" },
-  { name: "Paket Wisata", href: "#packages" },
+  { name: "Keunggulan", href: "#features" },
+  { name: "Katalog", href: "#gallery" },
+  { name: "Cerita Petani", href: "#about" },
+  { name: "Testimoni", href: "#testimonials" },
 ];
 
 export default function Navbar() {
@@ -32,7 +31,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0a1120]/90 backdrop-blur-md border-b border-white/5 py-3 shadow-lg"
+            ? "bg-stone-950/90 backdrop-blur-md border-b border-white/5 py-3 shadow-lg"
             : "bg-transparent py-5"
         }`}
       >
@@ -40,15 +39,11 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2 z-50">
-            <Image
-              src="/assets/logo-putih.png"
-              alt="Hexa Logo"
-              width={120}
-              height={40}
-              className="h-8 md:h-10 w-auto object-contain"
-            />
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-600 text-white rounded-full flex items-center justify-center">
+              <Leaf className="w-5 h-5 md:w-6 md:h-6" />
+            </div>
             <span className="text-white font-bold text-lg md:text-xl tracking-tight hidden sm:block">
-              Hexa <span className="text-[#38bdf8]">Creative</span>
+              Bima Wibisono <span className="text-amber-500">Kentang</span>
             </span>
           </Link>
 
@@ -59,7 +54,7 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                    className="text-sm font-medium text-stone-300 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -69,11 +64,10 @@ export default function Navbar() {
             <div className="w-px h-5 bg-white/10" />
             <Button
               asChild
-              className="bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full px-5 shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5"
+              className="bg-green-600 hover:bg-green-500 text-white font-semibold rounded-full px-5 shadow-lg shadow-green-600/20 transition-all hover:-translate-y-0.5"
             >
               <Link href="#contact" className="flex items-center gap-2">
-                <PhoneCall className="w-4 h-4" />
-                Hubungi Kami
+                Pesan Sekarang
               </Link>
             </Button>
           </nav>
@@ -95,7 +89,7 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#0d152a] lg:hidden transition-transform duration-300 pointer-events-none flex flex-col pt-24 px-6 gap-8 ${
+        className={`fixed inset-0 z-40 bg-stone-950 lg:hidden transition-transform duration-300 pointer-events-none flex flex-col pt-24 px-6 gap-8 ${
           isMobileMenuOpen
             ? "translate-y-0 pointer-events-auto"
             : "-translate-y-full"
@@ -106,7 +100,7 @@ export default function Navbar() {
             <li key={link.name}>
               <Link
                 href={link.href}
-                className="text-2xl font-semibold text-slate-200 hover:text-white block"
+                className="text-2xl font-semibold text-stone-200 hover:text-white block"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -120,12 +114,11 @@ export default function Navbar() {
         <Button
           asChild
           size="lg"
-          className="bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl w-full max-w-xs mx-auto py-6 text-lg"
+          className="bg-green-600 hover:bg-green-500 text-white font-semibold rounded-2xl w-full max-w-xs mx-auto py-6 text-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <Link href="#contact" className="flex items-center justify-center gap-2">
-            <PhoneCall className="w-5 h-5" />
-            Hubungi Sekarang
+            Pesan Sekarang via WhatsApp
           </Link>
         </Button>
       </div>
