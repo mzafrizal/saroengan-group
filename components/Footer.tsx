@@ -1,80 +1,129 @@
-import {
-  PhoneCall,
-  ExternalLink,
-  Leaf,
-} from "lucide-react";
 import Link from "next/link";
+import { Instagram, Music2, Utensils, Coffee, Flame } from "lucide-react";
+
+const businessLinks = [
+  { name: "Angkringan Saroengan", href: "/angkringan-saroengan", icon: Utensils },
+  { name: "Cafe Saroengan", href: "/cafe-saroengan", icon: Coffee },
+  { name: "Seblak Saroengan", href: "/seblak-saroengan", icon: Flame },
+];
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/saroengan.group",
+    icon: Instagram,
+    color: "hover:text-pink-400",
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@saroengan.group",
+    icon: Music2,
+    color: "hover:text-white",
+  },
+];
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-stone-900 text-white">
-      {/* Contact Section */}
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-amber-500 font-semibold text-sm tracking-widest uppercase mb-3">
-            Kontak & Pemesanan
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Pesan Kentang Grosir Anda Hari Ini
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-400 rounded-full mx-auto mb-6" />
-          <p className="text-stone-400 text-lg max-w-xl mx-auto">
-            Butuh kentang segar dalam jumlah besar?{" "}
-            <span className="text-amber-400 font-medium">
-              Hubungi petani kami langsung
-            </span>{" "}
-            untuk mendapatkan penawaran spesial.
-          </p>
-        </div>
+    <footer className="bg-stone-950 text-white border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-        
-    
+          {/* Column 1: Brand */}
+          <div className="flex flex-col gap-4">
+            {/* Logo mark */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-black text-lg shadow-lg">
+                S
+              </div>
+              <div>
+                <p className="text-white font-black text-base leading-tight tracking-tight">
+                  Saroengan Group
+                </p>
+                <p className="text-stone-500 text-xs mt-0.5">Satu Wadah, Beragam Rasa</p>
+              </div>
+            </div>
 
-        {/* CTA Banner */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-green-700 via-green-600 to-emerald-600 p-8 md:p-10 text-center shadow-2xl shadow-green-600/20 mt-12">
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
-              Kemitraan Langsung dari Lereng Sumbing!
-            </h3>
-            <p className="text-green-100 mb-6 max-w-lg mx-auto">
-              Dapatkan kentang segar kualitas terbaik dengan harga petani. Chat sekarang untuk informasi stok dan ketersediaan.
+            <p className="text-stone-500 text-sm leading-relaxed max-w-xs">
+              Menghadirkan ruang berkumpul yang nyaman dengan sajian berkualitas. Cita rasa lokal,
+              pelayanan terbaik.
             </p>
-            <Link
-              href="https://wa.me/628174714181"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-stone-50 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <PhoneCall className="w-5 h-5" />
-              Tanya Harga via WhatsApp
-            </Link>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-3 mt-2">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className={`w-9 h-9 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-stone-400 ${social.color} hover:border-white/20 hover:bg-white/10 transition-all duration-200`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Column 2: Unit Bisnis */}
+          <div>
+            <h4 className="text-white font-bold text-sm mb-5 tracking-widest uppercase">
+              Unit Bisnis
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {businessLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-center gap-2.5 text-stone-400 hover:text-amber-400 transition-colors duration-200"
+                    >
+                      <Icon className="w-4 h-4 text-stone-600 group-hover:text-amber-500 transition-colors" />
+                      <span className="text-sm">{link.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Column 3: Tautan Cepat */}
+          <div>
+            <h4 className="text-white font-bold text-sm mb-5 tracking-widest uppercase">
+              Navigasi
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {[
+                { name: "Beranda", href: "#home" },
+                { name: "Tentang Kami", href: "#about" },
+                { name: "Unit Bisnis", href: "#businesses" },
+                { name: "Galeri", href: "#gallery" },
+                { name: "Lokasi", href: "#location" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-stone-400 hover:text-amber-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-stone-800">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo & Name */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center">
-              <Leaf className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-white font-bold text-sm leading-tight">
-                UMKM BIMA WIBISONO
-              </p>
-              <p className="text-stone-500 text-xs mt-0.5">
-                Penyedia Kentang Segar Sukomakmur
-              </p>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <p className="text-stone-500 text-sm text-center">
-            &copy; {new Date().getFullYear()} UMKM Bima Wibisono. All rights reserved.
+        {/* Divider */}
+        <div className="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-stone-600 text-xs text-center sm:text-left">
+            &copy; {new Date().getFullYear()} Saroengan Group. All rights reserved.
+          </p>
+          <p className="text-stone-700 text-xs">
+            Made with ❤️ for great food experiences
           </p>
         </div>
       </div>

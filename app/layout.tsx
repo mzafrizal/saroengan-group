@@ -9,31 +9,32 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "UMKM Bima Wibisono | Grosir Kentang Segar Sukomakmur",
+  title: "Saroengan Group | Kuliner & Tempat Nongkrong Terbaik",
   description:
-    "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing, Dusun Marongan, Sukomakmur, Magelang.",
+    "Saroengan Group — satu wadah, beragam rasa. Temukan pengalaman kuliner dan tempat nongkrong terbaik: Angkringan Saroengan, Cafe Saroengan, dan Seblak Saroengan.",
   keywords: [
-    "grosir kentang",
-    "kentang sukomakmur",
-    "agen kentang",
-    "kentang dieng",
-    "kentang sumbing",
-    "Bima Wibisono",
-    "petani kentang",
-    "jual kentang magelang",
+    "saroengan group",
+    "angkringan saroengan",
+    "cafe saroengan",
+    "seblak saroengan",
+    "kuliner saroengan",
+    "tempat nongkrong",
+    "angkringan enak",
+    "cafe aesthetic",
+    "seblak pedas",
   ],
   openGraph: {
-    title: "UMKM Bima Wibisono | Grosir Kentang Segar Sukomakmur",
-    description: "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing, Magelang.",
-    url: "https://bimawibisonokentang.vercel.app",
-    siteName: "UMKM Bima Wibisono",
+    title: "Saroengan Group | Kuliner & Tempat Nongkrong Terbaik",
+    description: "Satu wadah, beragam rasa. Temukan Angkringan, Cafe, dan Seblak terbaik di Saroengan Group.",
+    url: "https://saroengan.vercel.app",
+    siteName: "Saroengan Group",
     locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "UMKM Bima Wibisono | Grosir Kentang",
-    description: "Pusat grosir kentang segar terbaik berkualitas, langsung dari petani lereng Gunung Sumbing.",
+    title: "Saroengan Group | Kuliner & Tempat Nongkrong Terbaik",
+    description: "Satu wadah, beragam rasa. Angkringan, Cafe, dan Seblak — semua ada di Saroengan Group.",
   },
 };
 
