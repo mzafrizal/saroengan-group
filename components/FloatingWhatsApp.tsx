@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 export default function FloatingWhatsApp() {
   return (
     <Link
-      href="https://wa.me/628174714181"
+      href="https://wa.me/6281918427125"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hubungi via WhatsApp"
@@ -16,12 +16,10 @@ export default function FloatingWhatsApp() {
       {/* Konten Icon & Teks */}
       <div className="relative flex items-center justify-center">
         <MessageCircle className="w-6 h-6 flex-shrink-0" />
-        
+
         {/* Teks muncul saat hover dengan transisi opacity dan width */}
         <div className="grid grid-rows-[1fr] transition-all duration-300 text-sm font-medium w-0 overflow-hidden group-hover:w-[76px] group-hover:ml-2">
-          <span className="opacity-0 transition-opacity duration-300 delay-100 group-hover:opacity-100 whitespace-nowrap">
-            WhatsApp
-          </span>
+          <span className="opacity-0 transition-opacity duration-300 delay-100 group-hover:opacity-100 whitespace-nowrap">WhatsApp</span>
         </div>
       </div>
     </Link>

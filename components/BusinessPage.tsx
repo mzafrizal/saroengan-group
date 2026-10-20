@@ -1,17 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  User,
-  UtensilsCrossed,
-  CalendarCheck,
-  Map,
-  Handshake,
-  Heart,
-  ChefHat,
-  MoreHorizontal,
-  ChevronLeft,
-  ArrowRight,
-} from "lucide-react";
+import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight } from "lucide-react";
 
 export interface BusinessPageProps {
   businessId: "angkringan" | "cafe" | "seblak";
@@ -76,33 +65,16 @@ const navItems = [
   },
 ];
 
-export default function BusinessPage({
-  name,
-  tagline,
-  logoSrc,
-  logoAlt,
-  accentFrom,
-  accentTo,
-  bgDark,
-  basePath,
-}: BusinessPageProps) {
+export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFrom, accentTo, bgDark, basePath }: BusinessPageProps) {
   return (
-    <main
-      className={`min-h-screen ${bgDark} relative overflow-hidden`}
-      style={{ fontFamily: "var(--font-poppins, sans-serif)" }}
-    >
+    <main className={`min-h-screen ${bgDark} relative overflow-hidden`} style={{ fontFamily: "var(--font-poppins, sans-serif)" }}>
       {/* ── Background ambient glows ── */}
-      <div
-        className={`pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-10 bg-gradient-to-br ${accentFrom} ${accentTo}`}
-      />
+      <div className={`pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-10 bg-gradient-to-br ${accentFrom} ${accentTo}`} />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.03)_0,transparent_70%)]" />
 
       {/* ── Back link ── */}
       <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 pt-6 sm:pt-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
-        >
+        <Link href="/" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 text-sm transition-colors duration-200">
           <ChevronLeft className="w-4 h-4" />
           Saroengan Group
         </Link>
@@ -113,41 +85,25 @@ export default function BusinessPage({
           MOBILE: stacked layout
       ══════════════════════════════════════════ */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-12 lg:py-16">
-
         {/* ── lg+: flex row  |  below lg: flex column ── */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16 xl:gap-24">
-
           {/* ════════════ LEFT / TOP: Logo + Brand ════════════ */}
           <aside className="flex flex-col items-center lg:items-start lg:sticky lg:top-20 lg:min-w-[280px] xl:min-w-[320px] mb-10 lg:mb-0">
             {/* Logo */}
             <div className="relative flex items-center justify-center mb-6">
               {/* Glow ring */}
-              <div
-                className={`absolute inset-0 rounded-full blur-2xl opacity-25 bg-gradient-to-br ${accentFrom} ${accentTo} scale-110`}
-              />
+              <div className={`absolute inset-0 rounded-full blur-2xl opacity-25 bg-gradient-to-br ${accentFrom} ${accentTo} scale-110`} />
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 xl:w-60 xl:h-60 drop-shadow-2xl">
-                <Image
-                  src={logoSrc}
-                  alt={logoAlt}
-                  fill
-                  priority
-                  className="object-contain"
-                />
+                <Image src={logoSrc} alt={logoAlt} fill priority className="object-contain" />
               </div>
             </div>
 
             {/* Brand name */}
-            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-black text-center lg:text-left tracking-tight leading-tight mb-2">
-              {name}
-            </h1>
-            <p className="text-white/40 text-sm sm:text-base text-center lg:text-left leading-snug max-w-xs">
-              {tagline}
-            </p>
+            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-black text-center lg:text-left tracking-tight leading-tight mb-2">{name}</h1>
+            <p className="text-white/40 text-sm sm:text-base text-center lg:text-left leading-snug max-w-xs">{tagline}</p>
 
             {/* Accent divider */}
-            <div
-              className={`mt-5 h-0.5 w-16 rounded-full bg-gradient-to-r ${accentFrom} ${accentTo} opacity-70 lg:self-start self-center`}
-            />
+            <div className={`mt-5 h-0.5 w-16 rounded-full bg-gradient-to-r ${accentFrom} ${accentTo} opacity-70 lg:self-start self-center`} />
 
             {/* Desktop: extra brand info */}
             <div className="hidden lg:flex flex-col gap-3 mt-8 w-full">
@@ -156,7 +112,7 @@ export default function BusinessPage({
                 <p className="text-white font-semibold text-sm">Saroengan Group</p>
               </div>
               <Link
-                href="https://wa.me/628174714181"
+                href="https://wa.me/6281918427125"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-2xl px-5 py-3.5 hover:opacity-90 transition-opacity shadow-lg`}
@@ -201,12 +157,8 @@ export default function BusinessPage({
 
                     {/* Text */}
                     <div className="min-w-0">
-                      <p className="text-white font-bold text-sm sm:text-base leading-none mb-1 sm:mb-1.5">
-                        {item.label}
-                      </p>
-                      <p className="text-white/35 text-[11px] sm:text-xs leading-snug group-hover:text-white/55 transition-colors line-clamp-2">
-                        {item.description}
-                      </p>
+                      <p className="text-white font-bold text-sm sm:text-base leading-none mb-1 sm:mb-1.5">{item.label}</p>
+                      <p className="text-white/35 text-[11px] sm:text-xs leading-snug group-hover:text-white/55 transition-colors line-clamp-2">{item.description}</p>
                     </div>
                   </Link>
                 );
@@ -216,7 +168,7 @@ export default function BusinessPage({
             {/* Mobile: WhatsApp CTA */}
             <div className="lg:hidden mt-6">
               <Link
-                href="https://wa.me/628174714181"
+                href="https://wa.me/6281918427125"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2.5 bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-2xl px-5 py-4 hover:opacity-90 transition-opacity shadow-lg w-full`}
@@ -229,9 +181,7 @@ export default function BusinessPage({
             </div>
 
             {/* Footer note */}
-            <p className="text-white/15 text-xs mt-8 text-center lg:text-left">
-              &copy; {new Date().getFullYear()} Saroengan Group. All rights reserved.
-            </p>
+            <p className="text-white/15 text-xs mt-8 text-center lg:text-left">&copy; {new Date().getFullYear()} Saroengan Group. All rights reserved.</p>
           </div>
         </div>
       </div>
