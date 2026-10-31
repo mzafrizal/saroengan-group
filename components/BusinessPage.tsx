@@ -3,13 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight, X, MessageCircle, LucideIcon } from "lucide-react";
+import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight, X, MessageCircle, MapPin, LucideIcon } from "lucide-react";
 
 export interface ModalConfig {
   title: string;
   content: React.ReactNode;
-  waNumber: string;
+  waNumber?: string;
   waButtonLabel?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
 }
 
 export interface NavItem {
@@ -39,6 +41,10 @@ export interface BusinessPageProps {
   navHidden?: string[];
   /** Daftar nav item khusus jika tidak ingin menggunakan default */
   navItems?: NavItem[];
+  /** Tambahan nav item baru untuk digabungkan dengan default */
+  extraNavItems?: NavItem[];
+  /** Buat tata letak kolom kiri dan kanan rata tengah */
+  centerLayout?: boolean;
 }
 
 export const defaultNavItems: NavItem[] = [
@@ -94,7 +100,9 @@ export const defaultNavItems: NavItem[] = [
 
 /* ── Modal Component ── */
 function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalConfig; accentFrom: string; accentTo: string; onClose: () => void }) {
-  const waUrl = `https://wa.me/${config.waNumber.replace(/\D/g, "")}`;
+  const targetUrl = config.buttonHref ?? (config.waNumber ? `https://wa.me/${config.waNumber.replace(/\D/g, "")}` : "#");
+  const buttonLabel = config.buttonLabel ?? config.waButtonLabel ?? "For More Information";
+  const isMaps = targetUrl.includes("maps") || targetUrl.includes("goo.gl");
 
   return (
     /* Backdrop */
@@ -118,16 +126,16 @@ function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalCon
         {/* Content */}
         <div className="px-5 pb-4 text-white text-sm leading-relaxed">{config.content}</div>
 
-        {/* WA Button */}
+        {/* Action Button */}
         <div className="px-5 pb-5">
           <Link
-            href={waUrl}
+            href={targetUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center gap-2.5 w-full bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-xl px-5 py-3 hover:opacity-90 transition-opacity shadow-lg`}
           >
-            <MessageCircle className="w-4 h-4" />
-            {config.waButtonLabel ?? "For More Information"}
+            {isMaps ? <MapPin className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
+            {buttonLabel}
           </Link>
         </div>
       </div>
@@ -149,6 +157,8 @@ export default function BusinessPage({
   navModals = {},
   navHidden = [],
   navItems: customNavItems,
+  extraNavItems = [],
+  centerLayout = false,
 }: BusinessPageProps) {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
@@ -157,7 +167,8 @@ export default function BusinessPage({
 
   const currentModal = activeModal && navModals[activeModal] ? navModals[activeModal] : null;
 
-  const activeNavItems = (customNavItems ?? defaultNavItems).filter(
+  const baseItems = customNavItems ?? [...defaultNavItems, ...extraNavItems];
+  const activeNavItems = baseItems.filter(
     (item) => !navHidden.includes(item.key)
   );
 

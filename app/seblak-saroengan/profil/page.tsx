@@ -224,7 +224,7 @@ export default function SeblakProfilPage() {
 
             {/* CTA Hubungi Kami */}
             <Link
-              href="https://wa.me/6288200726544"
+              href="https://wa.me/62882007265442"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold text-sm rounded-xl px-6 py-3 hover:opacity-90 transition-opacity shadow-lg shadow-red-500/20"
@@ -367,7 +367,7 @@ export default function SeblakProfilPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3 relative z-10">
             <Link
-              href="https://wa.me/6288200726544"
+              href="https://wa.me/62882007265442"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-red-600 font-bold text-sm rounded-xl px-6 py-3 hover:bg-stone-100 transition-colors shadow-lg"
