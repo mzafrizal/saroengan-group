@@ -3,17 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Flame,
-  UtensilsCrossed,
-  Sparkles,
-  Users,
-  Heart,
-  Star,
-  CheckCircle2,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Flame, UtensilsCrossed, Sparkles, Users, Heart, Star, CheckCircle2 } from "lucide-react";
 
 const galleryImages = [
   "/assets/seblak/DSC04356.JPG",
@@ -100,14 +90,7 @@ function GalleryCarousel() {
     <div className="relative w-full select-none">
       {/* Main image */}
       <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-        <Image
-          key={active}
-          src={galleryImages[active]}
-          alt={`Dokumentasi Seblak Saroengan ${active + 1}`}
-          fill
-          className="object-cover transition-opacity duration-500"
-          priority={active === 0}
-        />
+        <Image key={active} src={galleryImages[active]} alt={`Dokumentasi Seblak Saroengan ${active + 1}`} fill className="object-cover transition-opacity duration-500" priority={active === 0} />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
@@ -136,16 +119,7 @@ function GalleryCarousel() {
       {/* Dot indicators */}
       <div className="flex justify-center gap-1.5 mt-4">
         {galleryImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`rounded-full transition-all duration-300 ${
-              i === active
-                ? "w-6 h-2 bg-red-500"
-                : "w-2 h-2 bg-white/25 hover:bg-white/50"
-            }`}
-            aria-label={`Foto ${i + 1}`}
-          />
+          <button key={i} onClick={() => setActive(i)} className={`rounded-full transition-all duration-300 ${i === active ? "w-6 h-2 bg-red-500" : "w-2 h-2 bg-white/25 hover:bg-white/50"}`} aria-label={`Foto ${i + 1}`} />
         ))}
       </div>
 
@@ -156,17 +130,10 @@ function GalleryCarousel() {
             key={i}
             onClick={() => setActive(i)}
             className={`relative flex-shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-xl overflow-hidden transition-all duration-200 border ${
-              i === active
-                ? "ring-2 ring-red-500 border-transparent opacity-100 scale-105"
-                : "border-white/10 opacity-40 hover:opacity-70"
+              i === active ? "ring-2 ring-red-500 border-transparent opacity-100 scale-105" : "border-white/10 opacity-40 hover:opacity-70"
             }`}
           >
-            <Image
-              src={src}
-              alt={`Thumbnail Seblak Saroengan ${i + 1}`}
-              fill
-              className="object-cover"
-            />
+            <Image src={src} alt={`Thumbnail Seblak Saroengan ${i + 1}`} fill className="object-cover" />
           </button>
         ))}
       </div>
@@ -176,10 +143,7 @@ function GalleryCarousel() {
 
 export default function SeblakProfilPage() {
   return (
-    <main
-      className="min-h-screen bg-stone-950 text-white overflow-x-hidden"
-      style={{ fontFamily: "var(--font-poppins, sans-serif)" }}
-    >
+    <main className="min-h-screen bg-stone-950 text-white overflow-x-hidden" style={{ fontFamily: "var(--font-poppins, sans-serif)" }}>
       {/* ── Ambient background ── */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-[140px] opacity-10 bg-gradient-to-br from-red-600 to-rose-600" />
@@ -188,10 +152,7 @@ export default function SeblakProfilPage() {
 
       {/* ── Navbar / Back ── */}
       <nav className="relative z-10 w-full px-6 sm:px-10 lg:px-16 pt-6 sm:pt-8 pb-4">
-        <Link
-          href="/seblak-saroengan"
-          className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
-        >
+        <Link href="/seblak-saroengan" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 text-sm transition-colors duration-200">
           <ChevronLeft className="w-4 h-4" />
           Seblak Saroengan
         </Link>
@@ -210,16 +171,11 @@ export default function SeblakProfilPage() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-5">
-              Seblak{" "}
-              <span className="bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
-                Saroengan
-              </span>
+              Seblak <span className="bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">Saroengan</span>
             </h1>
 
             <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 text-justify max-w-xl">
-              Sensasi pedas gurih yang bikin nagih dengan puluhan topping pilihan melimpah. Diracik
-              dari bumbu rempah autentik berkualitas yang selalu segar setiap hari untuk memanjakan lidah
-              para penikmat kuliner pedas.
+              Sensasi pedas gurih yang bikin nagih dengan puluhan topping pilihan melimpah. Diracik dari bumbu rempah autentik berkualitas yang selalu segar setiap hari untuk memanjakan lidah para penikmat kuliner pedas.
             </p>
 
             {/* CTA Hubungi Kami */}
@@ -239,13 +195,7 @@ export default function SeblakProfilPage() {
           {/* Right: Hero image */}
           <div className="flex-shrink-0 lg:w-[420px] xl:w-[480px]">
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <Image
-                src="/assets/seblak/DSC04356.JPG"
-                alt="Sajian Seblak Saroengan"
-                fill
-                priority
-                className="object-cover"
-              />
+              <Image src="/assets/seblak/DSC04356.JPG" alt="Sajian Seblak Saroengan" fill priority className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent" />
             </div>
           </div>
@@ -257,24 +207,16 @@ export default function SeblakProfilPage() {
       ══════════════════════════════════════ */}
       <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="mb-10 text-center">
-          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">
-            Kenapa Seblak Saroengan?
-          </span>
+          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Kenapa Seblak Saroengan?</span>
           <h2 className="text-2xl sm:text-3xl font-black mt-2">
-            Rasa Pedas yang{" "}
-            <span className="bg-gradient-to-r from-red-400 via-rose-400 to-amber-400 bg-clip-text text-transparent">
-              Selalu Memikat
-            </span>
+            Rasa Pedas yang <span className="bg-gradient-to-r from-red-400 via-rose-400 to-amber-400 bg-clip-text text-transparent">Selalu Memikat</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
           {highlights.map((h) => {
             const Icon = h.icon;
             return (
-              <div
-                key={h.label}
-                className="group rounded-2xl bg-white/[0.04] border border-white/8 p-5 hover:bg-white/[0.07] hover:border-red-500/30 transition-all duration-300"
-              >
+              <div key={h.label} className="group rounded-2xl bg-white/[0.04] border border-white/8 p-5 hover:bg-white/[0.07] hover:border-red-500/30 transition-all duration-300">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-600 flex items-center justify-center mb-3 shadow-md group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-5 h-5 text-white" />
                 </div>
@@ -291,12 +233,8 @@ export default function SeblakProfilPage() {
       ══════════════════════════════════════ */}
       <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="mb-8">
-          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">
-            Dokumentasi & Galeri
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-black mt-1">
-            Menu &amp; Varian Topping
-          </h2>
+          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Dokumentasi & Galeri</span>
+          <h2 className="text-2xl sm:text-3xl font-black mt-1">Menu &amp; Varian Topping</h2>
         </div>
         <GalleryCarousel />
       </section>
@@ -307,12 +245,8 @@ export default function SeblakProfilPage() {
       <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="rounded-3xl bg-gradient-to-br from-red-950/40 to-stone-900/60 border border-red-500/20 p-8 sm:p-10">
           <div className="mb-8">
-            <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">
-              Fasilitas & Layanan
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black mt-2">
-              Kenyamanan Menikmati Seblak
-            </h2>
+            <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Fasilitas & Layanan</span>
+            <h2 className="text-2xl sm:text-3xl font-black mt-2">Kenyamanan Menikmati Seblak</h2>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {fasilitas.map((item) => (
@@ -328,7 +262,7 @@ export default function SeblakProfilPage() {
       {/* ══════════════════════════════════════
           REVIEWS
       ══════════════════════════════════════ */}
-      <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
+      {/* <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="mb-8">
           <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">
             Ulasan
@@ -353,7 +287,7 @@ export default function SeblakProfilPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════
           CTA BOTTOM
@@ -362,9 +296,7 @@ export default function SeblakProfilPage() {
         <div className="rounded-3xl bg-gradient-to-r from-red-600 to-rose-600 p-8 sm:p-12 text-center shadow-2xl shadow-red-600/20 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.15)_0,transparent_60%)] pointer-events-none" />
           <h2 className="text-2xl sm:text-3xl font-black mb-3 relative z-10">Mau Nyeblak Hari Ini?</h2>
-          <p className="text-white/90 text-sm sm:text-base mb-6 relative z-10">
-            Hubungi kami untuk tanya menu, pesanan takeaway, atau reservasi tempat.
-          </p>
+          <p className="text-white/90 text-sm sm:text-base mb-6 relative z-10">Hubungi kami untuk tanya menu, pesanan takeaway, atau reservasi tempat.</p>
           <div className="flex flex-wrap justify-center gap-3 relative z-10">
             <Link
               href="https://wa.me/62882007265442"
@@ -377,10 +309,7 @@ export default function SeblakProfilPage() {
               </svg>
               WhatsApp Sekarang
             </Link>
-            <Link
-              href="/seblak-saroengan"
-              className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold text-sm rounded-xl px-6 py-3 transition-colors"
-            >
+            <Link href="/seblak-saroengan" className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold text-sm rounded-xl px-6 py-3 transition-colors">
               Kembali ke Menu Seblak
             </Link>
           </div>
@@ -388,10 +317,7 @@ export default function SeblakProfilPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 text-center pb-8 text-white/15 text-xs">
-        &copy; {new Date().getFullYear()} Saroengan Group. All rights reserved.
-      </footer>
+      <footer className="relative z-10 text-center pb-8 text-white/15 text-xs">&copy; {new Date().getFullYear()} Saroengan Group. All rights reserved.</footer>
     </main>
   );
 }
-

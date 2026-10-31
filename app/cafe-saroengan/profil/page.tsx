@@ -261,7 +261,7 @@ export default function CafeProfilPage() {
       {/* ══════════════════════════════════════
           REVIEWS
       ══════════════════════════════════════ */}
-      <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
+      {/* <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="mb-8">
           <span className="text-stone-400 font-semibold text-xs tracking-widest uppercase">Ulasan</span>
           <h2 className="text-2xl sm:text-3xl font-black mt-1">Kata Mereka</h2>
@@ -279,7 +279,7 @@ export default function CafeProfilPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════
           CTA BOTTOM
