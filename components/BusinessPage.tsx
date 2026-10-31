@@ -1,6 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight } from "lucide-react";
+import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight, X, MessageCircle } from "lucide-react";
+
+export interface ModalConfig {
+  title: string;
+  content: React.ReactNode;
+  waNumber: string;
+  waButtonLabel?: string;
+}
 
 export interface BusinessPageProps {
   businessId: "angkringan" | "cafe" | "seblak";
@@ -12,6 +22,14 @@ export interface BusinessPageProps {
   accentTo: string;
   bgDark: string;
   basePath: string;
+  /** Nomor WA tombol "Hubungi via WhatsApp" (format: 628xxx) */
+  waNumber: string;
+  /** Override href untuk nav item tertentu, misal: { menu: "https://..." } */
+  navOverrides?: Partial<Record<string, string>>;
+  /** Tampilkan pop-up modal untuk nav item tertentu */
+  navModals?: Partial<Record<string, ModalConfig>>;
+  /** Sembunyikan nav item tertentu (array of key) */
+  navHidden?: string[];
 }
 
 const navItems = [
@@ -65,7 +83,57 @@ const navItems = [
   },
 ];
 
-export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFrom, accentTo, bgDark, basePath }: BusinessPageProps) {
+/* ── Modal Component ── */
+function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalConfig; accentFrom: string; accentTo: string; onClose: () => void }) {
+  const waUrl = `https://wa.me/${config.waNumber.replace(/\D/g, "")}`;
+
+  return (
+    /* Backdrop */
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      {/* Dim overlay — gelap pekat */}
+      <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
+
+      {/* Modal box — solid, tidak terlalu lebar */}
+      <div className="relative z-10 w-full max-w-xs sm:max-w-sm rounded-2xl bg-stone-950 border border-stone-800 shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+        {/* Top accent bar */}
+        <div className={`h-1 w-full bg-gradient-to-r ${accentFrom} ${accentTo}`} />
+
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 pt-5 pb-3">
+          <h3 className="text-white font-bold text-base">{config.title}</h3>
+          <button onClick={onClose} className="w-7 h-7 flex items-center justify-center rounded-full bg-stone-800 hover:bg-stone-700 transition-colors text-white">
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="px-5 pb-4 text-white text-sm leading-relaxed">{config.content}</div>
+
+        {/* WA Button */}
+        <div className="px-5 pb-5">
+          <Link
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center justify-center gap-2.5 w-full bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-xl px-5 py-3 hover:opacity-90 transition-opacity shadow-lg`}
+          >
+            <MessageCircle className="w-4 h-4" />
+            {config.waButtonLabel ?? "For More Information"}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFrom, accentTo, bgDark, basePath, waNumber, navOverrides = {}, navModals = {}, navHidden = [] }: BusinessPageProps) {
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  const openModal = (key: string) => setActiveModal(key);
+  const closeModal = () => setActiveModal(null);
+
+  const currentModal = activeModal && navModals[activeModal] ? navModals[activeModal] : null;
+
   return (
     <main className={`min-h-screen ${bgDark} relative overflow-hidden`} style={{ fontFamily: "var(--font-poppins, sans-serif)" }}>
       {/* ── Background ambient glows ── */}
@@ -112,7 +180,7 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
                 <p className="text-white font-semibold text-sm">Saroengan Group</p>
               </div>
               <Link
-                href="https://wa.me/6281918427125"
+                href={`https://wa.me/${waNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-2xl px-5 py-3.5 hover:opacity-90 transition-opacity shadow-lg`}
@@ -139,12 +207,15 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {navItems.map((item) => {
                 const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.key}
-                    href={`/${basePath}/${item.key}`}
-                    className="group relative flex flex-col items-start gap-3 sm:gap-4 rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 border border-white/8 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 active:scale-95"
-                  >
+                const hasModal = !!navModals[item.key];
+                const href = navOverrides[item.key] ?? `/${basePath}/${item.key}`;
+                const isExternal = href.startsWith("http");
+
+                const cardClass =
+                  "group relative flex flex-col items-start gap-3 sm:gap-4 rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 border border-white/8 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30 active:scale-95 text-left w-full";
+
+                const cardInner = (
+                  <>
                     {/* Arrow top-right */}
                     <ArrowRight className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/15 group-hover:text-white/50 group-hover:translate-x-0.5 -translate-x-0.5 transition-all duration-300" />
 
@@ -160,6 +231,20 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
                       <p className="text-white font-bold text-sm sm:text-base leading-none mb-1 sm:mb-1.5">{item.label}</p>
                       <p className="text-white/35 text-[11px] sm:text-xs leading-snug group-hover:text-white/55 transition-colors line-clamp-2">{item.description}</p>
                     </div>
+                  </>
+                );
+
+                if (hasModal) {
+                  return (
+                    <button key={item.key} onClick={() => openModal(item.key)} className={cardClass}>
+                      {cardInner}
+                    </button>
+                  );
+                }
+
+                return (
+                  <Link key={item.key} href={href} {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={cardClass}>
+                    {cardInner}
                   </Link>
                 );
               })}
@@ -168,7 +253,7 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
             {/* Mobile: WhatsApp CTA */}
             <div className="lg:hidden mt-6">
               <Link
-                href="https://wa.me/6281918427125"
+                href={`https://wa.me/${waNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2.5 bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-2xl px-5 py-4 hover:opacity-90 transition-opacity shadow-lg w-full`}
@@ -185,6 +270,9 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
           </div>
         </div>
       </div>
+
+      {/* ── Modal ── */}
+      {currentModal && <InfoModal config={currentModal} accentFrom={accentFrom} accentTo={accentTo} onClose={closeModal} />}
     </main>
   );
 }

@@ -7,7 +7,7 @@ export default function FloatingWhatsApp() {
       href="https://wa.me/6281918427125"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Hubungi via WhatsApp"
+      aria-label="For More Information"
       className="group fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full bg-[#25D366] text-white p-4 shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:bg-[#20bd5a] hover:scale-105 hover:shadow-[#25D366]/50"
     >
       {/* Efek Gelombang (Ping) di belakang tombol */}

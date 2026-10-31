@@ -106,7 +106,7 @@ export default function Navbar() {
 
         <Button asChild size="lg" className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-2xl w-full max-w-xs mx-auto py-6 text-lg" onClick={() => setIsMobileMenuOpen(false)}>
           <Link href="https://wa.me/6281918427125" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-            Hubungi via WhatsApp
+            For More Information
           </Link>
         </Button>
       </div>

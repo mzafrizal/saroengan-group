@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://hexacreative.com
+Host: https://bimawibisonokentang.vercel.app
 
 # Sitemaps
-Sitemap: https://hexacreative.com/sitemap.xml
+Sitemap: https://bimawibisonokentang.vercel.app/sitemap.xml

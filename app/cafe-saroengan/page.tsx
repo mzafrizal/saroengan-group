@@ -18,6 +18,7 @@ export default function CafePage() {
       accentTo="to-stone-700"
       bgDark="bg-stone-950"
       basePath="cafe-saroengan"
+      waNumber="6285117508581"
     />
   );
 }

@@ -18,6 +18,7 @@ export default function SeblakPage() {
       accentTo="to-rose-600"
       bgDark="bg-stone-950"
       basePath="seblak-saroengan"
+      waNumber="6288200726544"
     />
   );
 }
