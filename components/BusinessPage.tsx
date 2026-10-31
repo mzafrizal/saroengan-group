@@ -3,13 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight, X, MessageCircle } from "lucide-react";
+import { User, UtensilsCrossed, CalendarCheck, Map, Handshake, Heart, ChefHat, MoreHorizontal, ChevronLeft, ArrowRight, X, MessageCircle, LucideIcon } from "lucide-react";
 
 export interface ModalConfig {
   title: string;
   content: React.ReactNode;
   waNumber: string;
   waButtonLabel?: string;
+}
+
+export interface NavItem {
+  key: string;
+  label: string;
+  icon: LucideIcon;
+  description: string;
 }
 
 export interface BusinessPageProps {
@@ -30,9 +37,11 @@ export interface BusinessPageProps {
   navModals?: Partial<Record<string, ModalConfig>>;
   /** Sembunyikan nav item tertentu (array of key) */
   navHidden?: string[];
+  /** Daftar nav item khusus jika tidak ingin menggunakan default */
+  navItems?: NavItem[];
 }
 
-const navItems = [
+export const defaultNavItems: NavItem[] = [
   {
     key: "profil",
     label: "Profil",
@@ -126,13 +135,31 @@ function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalCon
   );
 }
 
-export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFrom, accentTo, bgDark, basePath, waNumber, navOverrides = {}, navModals = {}, navHidden = [] }: BusinessPageProps) {
+export default function BusinessPage({
+  name,
+  tagline,
+  logoSrc,
+  logoAlt,
+  accentFrom,
+  accentTo,
+  bgDark,
+  basePath,
+  waNumber,
+  navOverrides = {},
+  navModals = {},
+  navHidden = [],
+  navItems: customNavItems,
+}: BusinessPageProps) {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const openModal = (key: string) => setActiveModal(key);
   const closeModal = () => setActiveModal(null);
 
   const currentModal = activeModal && navModals[activeModal] ? navModals[activeModal] : null;
+
+  const activeNavItems = (customNavItems ?? defaultNavItems).filter(
+    (item) => !navHidden.includes(item.key)
+  );
 
   return (
     <main className={`min-h-screen ${bgDark} relative overflow-hidden`} style={{ fontFamily: "var(--font-poppins, sans-serif)" }}>
@@ -168,7 +195,7 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
 
             {/* Brand name */}
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-black text-center lg:text-left tracking-tight leading-tight mb-2">{name}</h1>
-            <p className="text-white/40 text-sm sm:text-base text-center lg:text-left leading-snug max-w-xs">{tagline}</p>
+            <p className="text-white/40 text-sm sm:text-base text-center lg:text-justify leading-relaxed max-w-sm">{tagline}</p>
 
             {/* Accent divider */}
             <div className={`mt-5 h-0.5 w-16 rounded-full bg-gradient-to-r ${accentFrom} ${accentTo} opacity-70 lg:self-start self-center`} />
@@ -205,7 +232,7 @@ export default function BusinessPage({ name, tagline, logoSrc, logoAlt, accentFr
 
             {/* Grid: 2 cols mobile → 3 cols tablet → 4 cols desktop */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-              {navItems.map((item) => {
+              {activeNavItems.map((item) => {
                 const Icon = item.icon;
                 const hasModal = !!navModals[item.key];
                 const href = navOverrides[item.key] ?? `/${basePath}/${item.key}`;
