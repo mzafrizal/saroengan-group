@@ -3,7 +3,7 @@ import BusinessPage from "@/components/BusinessPage";
 export const metadata = {
   title: "Cafe Saroengan | Saroengan Group",
   description:
-    "Tempat estetik dengan racikan kopi pilihan. Pas banget untuk nugas, meeting, atau sekadar bersantai.",
+    "Cafe dengan nuansa islami dan klasik yang dipadukan dengan view Citylight Kota Semarang. Cocok di setiap momen kebersamaan, nongkrong, nugas, WFC, acara keluarga, dan menjadi titik kumpul wong tulus.",
 };
 
 export default function CafePage() {
@@ -11,7 +11,7 @@ export default function CafePage() {
     <BusinessPage
       businessId="cafe"
       name="Cafe Saroengan"
-      tagline="Kopi Pilihan, Suasana Estetik & Kekinian"
+      tagline="Cafe dengan nuansa islami dan klasik yang dipadukan dengan view Citylight Kota Semarang. Cocok di setiap momen kebersamaan, nongkrong, nugas, WFC, acara keluarga, dan menjadi titik kumpul wong tulus"
       logoSrc="/logo/logo-cafe-saroengan.png"
       logoAlt="Logo Cafe Saroengan"
       accentFrom="from-stone-500"
@@ -19,6 +19,7 @@ export default function CafePage() {
       bgDark="bg-stone-950"
       basePath="cafe-saroengan"
       waNumber="6285117508581"
+      centerLayout={true}
     />
   );
 }

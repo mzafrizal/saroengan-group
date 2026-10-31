@@ -11,7 +11,7 @@ export default function SeblakPage() {
     <BusinessPage
       businessId="seblak"
       name="Seblak Saroengan"
-      tagline="Pedas, Gurih & Bikin Nagih"
+      tagline="Sensasi pedas gurih yang bikin nagih dengan beragam topping pilihan melimpah. Cocok dinikmati bersama teman dan keluarga pecinta kuliner pedas autentik."
       logoSrc="/logo/logo-seblak-saroengan.png"
       logoAlt="Logo Seblak Saroengan"
       accentFrom="from-red-500"
@@ -19,6 +19,7 @@ export default function SeblakPage() {
       bgDark="bg-stone-950"
       basePath="seblak-saroengan"
       waNumber="6288200726544"
+      centerLayout={true}
     />
   );
 }
