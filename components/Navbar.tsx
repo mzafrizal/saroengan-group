@@ -10,7 +10,6 @@ const navLinks = [
   { name: "Tentang Kami", href: "#about" },
   { name: "Unit Bisnis", href: "#businesses" },
   { name: "Galeri", href: "#gallery" },
-  { name: "Lokasi", href: "#location" },
 ];
 
 const businessLinks = [
@@ -57,12 +56,13 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="w-px h-5 bg-white/10" />
-            <Button asChild className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-semibold rounded-full px-5 shadow-lg shadow-amber-600/20 transition-all hover:-translate-y-0.5">
+            {/* HUBUNGI KAMI */}
+            {/* <div className="w-px h-5 bg-white/10" /> */}
+            {/* <Button asChild className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-semibold rounded-full px-5 shadow-lg shadow-amber-600/20 transition-all hover:-translate-y-0.5">
               <Link href="https://wa.me/6281918427125" target="_blank" rel="noopener noreferrer">
                 Hubungi Kami
               </Link>
-            </Button>
+            </Button> */}
           </nav>
 
           {/* Mobile Menu Toggle */}

@@ -65,12 +65,19 @@ export default function Businesses() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-amber-500 font-semibold text-sm tracking-widest uppercase mb-4">Unit Bisnis Kami</span>
+          <span className="inline-block text-amber-500 font-semibold text-sm tracking-widest uppercase mb-4">
+            Unit Usaha Saroengan Group
+          </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            Tiga Pilihan, <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Satu Semangat</span>
+            Ragam Konsep,{" "}
+            <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+              Satu Komitmen Nilai
+            </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-400 rounded-full mx-auto mb-6" />
-          <p className="max-w-2xl mx-auto text-stone-400 text-lg">Setiap bisnis kami dirancang untuk memberikan pengalaman unik — pilih sesuai suasana hatimu hari ini.</p>
+          <p className="max-w-3xl mx-auto text-stone-400 text-base sm:text-lg leading-relaxed">
+            Membuktikan performa bisnis solid melalui pengembangan unit usaha bernilai tambah tinggi dengan segmentasi pasar yang jelas, efisiensi operasional teruji, serta basis konsumen setia yang terus berkembang.
+          </p>
         </div>
 
         {/* Business Cards */}

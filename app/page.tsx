@@ -37,7 +37,6 @@ export default function Home() {
       </ScrollReveal> */}
       {/* 7. Footer */}
       <Footer />
-      <FloatingWhatsApp />
     </main>
   );
 }
