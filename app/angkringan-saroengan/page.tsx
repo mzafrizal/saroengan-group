@@ -59,12 +59,12 @@ export default function AngkringanPage() {
               <div className="bg-stone-900/50 p-4 rounded-xl border border-stone-800/80 shadow-inner">
                 <ul className="space-y-3 list-none">
                   {[
-                    "Minimal tamu: 100 orang",
-                    "DP 50% saat konfirmasi booking",
-                    "Pelunasan maksimal H-7 sebelum acara",
-                    "Tersedia paket dekorasi & hiburan",
-                    "Menu catering dapat dikustomisasi",
-                    "Gratis survei lokasi & konsultasi awal",
+                    "Reservasi Minimal 100 Pack",
+                    "Makanan Dan Minuman Wajib dari ANGSA",
+                    "Reservasi weding hanya dilakukan maksimal sampai pukul 15.00 WIB",
+                    "Pemilik Hajat Wajib melakukan koordinasi/ Meeting bersama tim manajemen angsa jauh hari sebelum Weding",
+                    "Wajib DP minimal 50% dari jumlah peserta",
+                    "Harga bervariatif mulai tergantung jumlah peserta, konsep, serta menu yang diinginkan",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-stone-200">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex-shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
