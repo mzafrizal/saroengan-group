@@ -39,8 +39,8 @@ const highlights = [
   },
   {
     icon: Coffee,
-    label: "Kopi & Menu Pilihan",
-    desc: "Sajian espresso-based, manual brew, hingga menu non-kopi",
+    label: "Kopi Lelet & Ketan Susu",
+    desc: "Signature Menu Spesial pekat nikmatnya Kopi Lelet &  gurih legitnya Ketan Susu",
   },
   {
     icon: Star,
@@ -50,7 +50,7 @@ const highlights = [
 ];
 
 const fasilitas = [
-  "Area indoor ber-AC & outdoor sejuk",
+  "Area sejuk",
   "View citylight malam Kota Semarang",
   "Free Wi-Fi kencang & colokan di tiap sudut",
   "Mushola nyaman & bersih",

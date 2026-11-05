@@ -12,6 +12,8 @@ export interface ModalConfig {
   waButtonLabel?: string;
   buttonHref?: string;
   buttonLabel?: string;
+  hideDefaultButton?: boolean;
+  maxWidth?: string;
 }
 
 export interface NavItem {
@@ -111,7 +113,7 @@ function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalCon
       <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
 
       {/* Modal box — solid, tidak terlalu lebar */}
-      <div className="relative z-10 w-full max-w-xs sm:max-w-sm rounded-2xl bg-stone-950 border border-stone-800 shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div className={`relative z-10 w-full ${config.maxWidth ?? "max-w-xs sm:max-w-sm"} rounded-2xl bg-stone-950 border border-stone-800 shadow-2xl overflow-hidden transition-all duration-300`} onClick={(e) => e.stopPropagation()}>
         {/* Top accent bar */}
         <div className={`h-1 w-full bg-gradient-to-r ${accentFrom} ${accentTo}`} />
 
@@ -124,20 +126,22 @@ function InfoModal({ config, accentFrom, accentTo, onClose }: { config: ModalCon
         </div>
 
         {/* Content */}
-        <div className="px-5 pb-4 text-white text-sm leading-relaxed">{config.content}</div>
+        <div className="px-5 pb-4 text-white text-sm leading-relaxed max-h-[82vh] overflow-y-auto custom-scrollbar">{config.content}</div>
 
         {/* Action Button */}
-        <div className="px-5 pb-5">
-          <Link
-            href={targetUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center justify-center gap-2.5 w-full bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-xl px-5 py-3 hover:opacity-90 transition-opacity shadow-lg`}
-          >
-            {isMaps ? <MapPin className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
-            {buttonLabel}
-          </Link>
-        </div>
+        {!config.hideDefaultButton && (
+          <div className="px-5 pb-5">
+            <Link
+              href={targetUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-2.5 w-full bg-gradient-to-r ${accentFrom} ${accentTo} text-white font-semibold text-sm rounded-xl px-5 py-3 hover:opacity-90 transition-opacity shadow-lg`}
+            >
+              {isMaps ? <MapPin className="w-4 h-4" /> : <MessageCircle className="w-4 h-4" />}
+              {buttonLabel}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -192,9 +196,9 @@ export default function BusinessPage({
       ══════════════════════════════════════════ */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 sm:py-12 lg:py-16">
         {/* ── lg+: flex row  |  below lg: flex column ── */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16 xl:gap-24">
+        <div className={`flex flex-col lg:flex-row ${centerLayout ? "lg:items-center" : "lg:items-start"} lg:gap-16 xl:gap-24`}>
           {/* ════════════ LEFT / TOP: Logo + Brand ════════════ */}
-          <aside className="flex flex-col items-center lg:items-start lg:sticky lg:top-20 lg:min-w-[280px] xl:min-w-[320px] mb-10 lg:mb-0">
+          <aside className={`flex flex-col items-center lg:items-start ${centerLayout ? "" : "lg:sticky lg:top-20"} lg:min-w-[280px] xl:min-w-[320px] mb-10 lg:mb-0`}>
             {/* Logo */}
             <div className="relative flex items-center justify-center mb-6">
               {/* Glow ring */}
@@ -241,8 +245,12 @@ export default function BusinessPage({
               </div>
             </div>
 
-            {/* Grid: 2 cols mobile → 3 cols tablet → 4 cols desktop */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {/* Grid: 2 cols mobile → 3 cols tablet → (3 cols jika 6 card, 4 cols jika >= 7 card di desktop) */}
+            <div
+              className={`grid grid-cols-2 sm:grid-cols-3 ${
+                activeNavItems.length >= 7 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+              } gap-3 sm:gap-4`}
+            >
               {activeNavItems.map((item) => {
                 const Icon = item.icon;
                 const hasModal = !!navModals[item.key];

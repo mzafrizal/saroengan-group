@@ -20,8 +20,7 @@ export default function SeblakPage() {
       navOverrides={{
         menu: "https://heyzine.com/flip-book/81138d2aef.html",
         reservasi: "https://wa.me/62882007265442",
-        "order-online":
-          "https://shopee.co.id/universal-link/nowfood/shop/21873188?deep_and_deferred=1&shareChannel=copy_link",
+        "order-online": "https://shopee.co.id/universal-link/nowfood/shop/21873188?deep_and_deferred=1&shareChannel=copy_link",
       }}
       navHidden={["wedding", "more", "catering"]}
       extraNavItems={[
@@ -43,7 +42,7 @@ export default function SeblakPage() {
 
               <div className="bg-stone-900/50 p-4 rounded-xl border border-stone-800/80 shadow-inner">
                 <ul className="space-y-3 list-none">
-                  {["Kolaborasi event & komunitas", "Sponsorship & brand activation", "Reseller & distribusi produk", "Co-branding & promosi bersama"].map((item) => (
+                  {["Kolaborasi event & komunitas", "Sponsorship & brand activation", "Reseller & distribusi produk", "Co-branding & promosi bersama", "Partner Kemitraan Bisnis"].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-stone-200">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-red-500 to-rose-600 flex-shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
                       <span>{item}</span>
@@ -76,9 +75,7 @@ export default function SeblakPage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-stone-300 text-xs leading-snug">
-                  Setiap ulasan bintang 5 sangat berharga bagi peningkatan mutu dan pelayanan kami.
-                </p>
+                <p className="text-stone-300 text-xs leading-snug">Setiap ulasan bintang 5 sangat berharga bagi peningkatan mutu dan pelayanan kami.</p>
               </div>
 
               <div className="pt-2 border-t border-stone-800/50">

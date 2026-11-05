@@ -28,7 +28,7 @@ const highlights = [
   { icon: Star, label: "Pengalaman Unik", desc: "Nuansa klasik bertemu estetika modern" },
 ];
 
-const fasilitas = ["Area indoor & outdoor", "View citylight Semarang", "Free Wi-Fi", "Parkir luas", "Live music (tertentu)", "Private area tersedia", "Ramah keluarga", "Event & wedding package"];
+const fasilitas = ["Area indoor & outdoor", "View citylight Semarang", "Free Wi-Fi", "Parkir luas", "Live music (tertentu)", "Ramah keluarga", "Event & wedding package"];
 
 const reviews = [
   { name: "Reyhan A.", rating: 5, text: "Tempatnya cozy banget, view malamnya keren! Makanannya enak dan harga terjangkau." },

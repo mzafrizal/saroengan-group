@@ -19,7 +19,7 @@ export default function CafePage() {
       navOverrides={{
         reservasi: "https://wa.me/6285117508581",
       }}
-      navHidden={["wedding", "more"]}
+      navHidden={["wedding", "more", "catering"]}
       navModals={{
         partnership: {
           title: "Partnership Cafe Saroengan",
@@ -31,7 +31,7 @@ export default function CafePage() {
 
               <div className="bg-stone-900/50 p-4 rounded-xl border border-stone-800/80 shadow-inner">
                 <ul className="space-y-3 list-none">
-                  {["Kolaborasi event & komunitas", "Sponsorship & brand activation", "Reseller & distribusi produk", "Co-branding & promosi bersama"].map((item) => (
+                  {["Kolaborasi event & komunitas", "Sponsorship & brand activation", "Reseller & distribusi produk", "Co-branding & promosi bersama", "Partner Kemitraan Bisnis"].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-stone-200">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-stone-400 to-stone-600 flex-shrink-0 shadow-[0_0_8px_rgba(168,162,158,0.5)]" />
                       <span>{item}</span>
@@ -64,9 +64,7 @@ export default function CafePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-stone-300 text-xs leading-snug">
-                  Setiap ulasan bintang 5 dari Anda sangat berharga untuk pelayanan kami yang lebih baik.
-                </p>
+                <p className="text-stone-300 text-xs leading-snug">Setiap ulasan bintang 5 dari Anda sangat berharga untuk pelayanan kami yang lebih baik.</p>
               </div>
 
               <div className="pt-2 border-t border-stone-800/50">
