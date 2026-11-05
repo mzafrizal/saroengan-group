@@ -5,16 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, MapPin, Users, Heart, Star, Coffee, Sparkles, Laptop } from "lucide-react";
 
-const galleryImages = [
-  "/assets/cafe/DSC01487.jpg",
-  "/assets/cafe/DSC01488.jpg",
-  "/assets/cafe/DSC01491.jpg",
-  "/assets/cafe/DSC01494.jpg",
-  "/assets/cafe/DSC00961.jpg",
-  "/assets/cafe/DSC01806.jpg",
-  "/assets/cafe/DSC05305.jpg",
-  "/assets/cafe/DSC05315.jpg",
-];
+const galleryImages = ["/assets/cafe/DSC01487.jpg", "/assets/cafe/DSC01488.jpg", "/assets/cafe/DSC01494.jpg", "/assets/cafe/DSC00961.jpg", "/assets/cafe/DSC01806.jpg", "/assets/cafe/DSC05305.jpg", "/assets/cafe/DSC05315.jpg"];
 
 const highlights = [
   {
