@@ -36,8 +36,8 @@ const businesses = [
   {
     id: "seblak",
     logo: "/logo/logo-seblak-saroengan.png",
-    logoAlt: "Logo Seblak Saroengan",
-    name: "Seblak Saroengan",
+    logoAlt: "Logo Waroenk Seblak x Kedai Saroengan",
+    name: "Waroenk Seblak x Kedai Saroengan",
     tagline: "Pedas & Bikin Nagih",
     description: "Seblak bernuansa estetik yang berkolaborasi dengan Kedai Saroengan menghadirkan konsep baru dengan view citylight, menu bervariatif, tempat yang worth it dan buka 24 jam.",
     buttonText: "Cek Varian Seblak",

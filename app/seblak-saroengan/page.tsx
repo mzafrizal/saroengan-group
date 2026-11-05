@@ -7,10 +7,10 @@ export default function SeblakPage() {
   return (
     <BusinessPage
       businessId="seblak"
-      name="Seblak Saroengan"
+      name="Waroenk Seblak x Kedai Saroengan"
       tagline="Seblak bernuansa estetik yang berkolaborasi dengan Kedai Saroengan menghadirkan konsep baru dengan view citylight, menu bervariatif, tempat yang worth it dan buka 24 jam"
       logoSrc="/logo/logo-seblak-saroengan.png"
-      logoAlt="Logo Seblak Saroengan"
+      logoAlt="Logo Waroenk Seblak x Kedai Saroengan"
       accentFrom="from-red-500"
       accentTo="to-rose-600"
       bgDark="bg-stone-950"
@@ -33,11 +33,11 @@ export default function SeblakPage() {
       ]}
       navModals={{
         partnership: {
-          title: "Partnership Seblak Saroengan",
+          title: "Partnership Waroenk Seblak x Kedai Saroengan",
           content: (
             <div className="space-y-4">
               <p className="text-sm text-stone-300 leading-relaxed">
-                Kami terbuka untuk berbagai bentuk kerja sama dan kolaborasi bisnis bersama <span className="text-rose-400 font-medium">Seblak Saroengan</span>.
+                Kami terbuka untuk berbagai bentuk kerja sama dan kolaborasi bisnis bersama <span className="text-rose-400 font-medium">Waroenk Seblak x Kedai Saroengan</span>.
               </p>
 
               <div className="bg-stone-900/50 p-4 rounded-xl border border-stone-800/80 shadow-inner">
@@ -64,7 +64,8 @@ export default function SeblakPage() {
           content: (
             <div className="space-y-4">
               <p className="text-sm text-stone-300 leading-relaxed">
-                Pernah menikmati pedas gurihnya <span className="text-rose-400 font-medium">Seblak Saroengan</span>? Bagikan pengalaman serumu dan bantu kami berkembang dengan memberikan ulasan serta rating bintang 5 di Google Maps!
+                Pernah menikmati pedas gurihnya <span className="text-rose-400 font-medium">Waroenk Seblak x Kedai Saroengan</span>? Bagikan pengalaman serumu dan bantu kami berkembang dengan memberikan ulasan serta rating bintang 5 di
+                Google Maps!
               </p>
 
               <div className="bg-stone-900/50 p-4 rounded-xl border border-stone-800/80 shadow-inner text-center">

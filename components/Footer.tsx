@@ -4,7 +4,7 @@ import { Instagram, Music2, Utensils, Coffee, Flame } from "lucide-react";
 const businessLinks = [
   { name: "Angkringan Saroengan", href: "/angkringan-saroengan", icon: Utensils },
   { name: "Cafe Saroengan", href: "/cafe-saroengan", icon: Coffee },
-  { name: "Seblak Saroengan", href: "/seblak-saroengan", icon: Flame },
+  { name: "Waroenk Seblak x Kedai Saroengan", href: "/seblak-saroengan", icon: Flame },
 ];
 
 const socialLinks = [

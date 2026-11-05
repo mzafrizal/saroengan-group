@@ -92,7 +92,7 @@ export default function LocationAndReviews() {
                     {[
                       { label: "Angkringan Saroengan", time: "17.00 – 01.00 WIB" },
                       { label: "Cafe Saroengan", time: "09.00 – 22.00 WIB" },
-                      { label: "Seblak Saroengan", time: "10.00 – 21.00 WIB" },
+                      { label: "Waroenk Seblak x Kedai Saroengan", time: "10.00 – 21.00 WIB" },
                     ].map((item) => (
                       <div key={item.label} className="flex justify-between items-center">
                         <span className="text-stone-400 text-xs">{item.label}</span>

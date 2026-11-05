@@ -35,7 +35,7 @@ const companyValues = [
     icon: Building2,
     badge: "Empat Unit Usaha",
     title: "Solusi Kuliner Terpadu",
-    desc: "Saroengan Cafe, Waroeng Seblak Saroengan, Kedai Saroengan, dan Angsa Cafe & Resto.",
+    desc: "Saroengan Cafe, Waroeng Waroenk Seblak x Kedai Saroengan, Kedai Saroengan, dan Angsa Cafe & Resto.",
     color: "text-stone-600",
     bg: "bg-stone-100",
     border: "border-stone-200",
@@ -80,8 +80,8 @@ export default function About() {
 
               <p>
                 Selama empat tahun bertransformasi dan melayani pelanggan, Saroengan Group berhasil membuktikan konsistensi serta performa bisnis yang solid. Keberhasilan ini terwujud melalui pengembangan empat unit usaha bernilai tambah
-                tinggi, yaitu <span className="font-semibold text-amber-700">Saroengan Cafe, Waroeng Seblak Saroengan, Kedai Saroengan,</span> dan <span className="font-semibold text-amber-700">Angsa Cafe &amp; Resto</span>. Setiap unit
-                usaha dirancang dengan segmentasi pasar yang jelas, efisiensi operasional yang teruji, serta basis konsumen setia yang terus berkembang.
+                tinggi, yaitu <span className="font-semibold text-amber-700">Saroengan Cafe, Waroeng Waroenk Seblak x Kedai Saroengan, Kedai Saroengan,</span> dan <span className="font-semibold text-amber-700">Angsa Cafe &amp; Resto</span>.
+                Setiap unit usaha dirancang dengan segmentasi pasar yang jelas, efisiensi operasional yang teruji, serta basis konsumen setia yang terus berkembang.
               </p>
             </div>
 

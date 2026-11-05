@@ -90,7 +90,7 @@ function GalleryCarousel() {
     <div className="relative w-full select-none">
       {/* Main image */}
       <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-        <Image key={active} src={galleryImages[active]} alt={`Dokumentasi Seblak Saroengan ${active + 1}`} fill className="object-cover transition-opacity duration-500" priority={active === 0} />
+        <Image key={active} src={galleryImages[active]} alt={`Dokumentasi Waroenk Seblak x Kedai Saroengan ${active + 1}`} fill className="object-cover transition-opacity duration-500" priority={active === 0} />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
@@ -133,7 +133,7 @@ function GalleryCarousel() {
               i === active ? "ring-2 ring-red-500 border-transparent opacity-100 scale-105" : "border-white/10 opacity-40 hover:opacity-70"
             }`}
           >
-            <Image src={src} alt={`Thumbnail Seblak Saroengan ${i + 1}`} fill className="object-cover" />
+            <Image src={src} alt={`Thumbnail Waroenk Seblak x Kedai Saroengan ${i + 1}`} fill className="object-cover" />
           </button>
         ))}
       </div>
@@ -154,7 +154,7 @@ export default function SeblakProfilPage() {
       <nav className="relative z-10 w-full px-6 sm:px-10 lg:px-16 pt-6 sm:pt-8 pb-4">
         <Link href="/seblak-saroengan" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 text-sm transition-colors duration-200">
           <ChevronLeft className="w-4 h-4" />
-          Seblak Saroengan
+          Waroenk Seblak x Kedai Saroengan
         </Link>
       </nav>
 
@@ -195,7 +195,7 @@ export default function SeblakProfilPage() {
           {/* Right: Hero image */}
           <div className="flex-shrink-0 lg:w-[420px] xl:w-[480px]">
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <Image src="/assets/seblak/DSC04356.JPG" alt="Sajian Seblak Saroengan" fill priority className="object-cover" />
+              <Image src="/assets/seblak/DSC04356.JPG" alt="Sajian Waroenk Seblak x Kedai Saroengan" fill priority className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent" />
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function SeblakProfilPage() {
       ══════════════════════════════════════ */}
       <section className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
         <div className="mb-10 text-center">
-          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Kenapa Seblak Saroengan?</span>
+          <span className="text-red-400 font-semibold text-xs tracking-widest uppercase">Kenapa Waroenk Seblak x Kedai Saroengan?</span>
           <h2 className="text-2xl sm:text-3xl font-black mt-2">
             Rasa Pedas yang <span className="bg-gradient-to-r from-red-400 via-rose-400 to-amber-400 bg-clip-text text-transparent">Selalu Memikat</span>
           </h2>
