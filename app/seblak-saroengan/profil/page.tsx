@@ -171,7 +171,7 @@ export default function SeblakProfilPage() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-5">
-              Seblak <span className="bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">Saroengan</span>
+              Waroenk Seblak x<span className="bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">Kedai Saroengan</span>
             </h1>
 
             <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 text-justify max-w-xl">
