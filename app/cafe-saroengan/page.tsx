@@ -17,6 +17,7 @@ export default function CafePage() {
       waNumber="6285117508581"
       centerLayout={true}
       navOverrides={{
+        menu: "https://opaper.app/saroengan_cafe",
         reservasi: "https://wa.me/6285117508581",
       }}
       navHidden={["wedding", "more", "catering"]}
