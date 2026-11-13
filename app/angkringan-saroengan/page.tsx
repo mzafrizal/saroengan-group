@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import BusinessPage from "@/components/BusinessPage";
 import { ArrowRight, ChevronLeft, UtensilsCrossed, BookOpen, ExternalLink, MessageCircle } from "lucide-react";
 
@@ -149,16 +150,14 @@ function CateringModalContent() {
 
           {/* Tombol Aksi Slide 2 */}
           <div className="space-y-2 pt-1 border-t border-stone-800/50">
-            <a
-              href="https://online.fliphtml5.com/fktif/Buku-Menu-Angsa-2026-Final/#google_vignette"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/angkringan-saroengan/menu-catering"
               className="flex items-center justify-center gap-2 w-full bg-stone-900 hover:bg-stone-800 border border-stone-700 hover:border-amber-500/50 text-stone-200 hover:text-amber-300 font-semibold text-xs sm:text-sm rounded-xl px-4 py-2.5 transition-all shadow-sm group"
             >
               <BookOpen className="w-4 h-4 text-amber-400" />
               <span>Menu Lainnya</span>
-              <ExternalLink className="w-3.5 h-3.5 text-stone-400 group-hover:text-amber-300 ml-auto" />
-            </a>
+              <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all ml-auto" />
+            </Link>
 
             <a
               href="https://wa.me/6285117715881?text=Halo%20Angkringan%20Saroengan,%20saya%20ingin%20pesan%20paket%20Catering"
@@ -191,7 +190,7 @@ export default function AngkringanPage() {
       waNumber="6285117715881"
       centerLayout={true}
       navOverrides={{
-        menu: "https://online.fliphtml5.com/fktif/Buku-Menu-Angsa-2026-Final/#google_vignette",
+        menu: "/angkringan-saroengan/menu-catering",
         reservasi: "https://wa.me/6285117715881",
       }}
       navHidden={["maps", "more"]}
